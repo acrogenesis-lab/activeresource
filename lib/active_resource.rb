@@ -33,6 +33,7 @@ module ActiveResource
   autoload :Callbacks
   autoload :Connection
   autoload :CustomMethods
+  autoload :Enum
   autoload :Formats
   autoload :HttpMock
   autoload :Observing
@@ -43,4 +44,3 @@ module ActiveResource
 end
 
 require 'active_resource/railtie' if defined? Rails
-

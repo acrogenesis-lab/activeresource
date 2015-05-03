@@ -601,8 +601,8 @@ module ActiveResource
       end
 
       def headers
-        Thread.current["active.resource.headers.#{self.object_id}"] ||= {}         
-        
+        Thread.current["active.resource.headers.#{self.object_id}"] ||= {}
+
         if superclass != Object && superclass.headers
           Thread.current["active.resource.headers.#{self.object_id}"] = superclass.headers.merge(Thread.current["active.resource.headers.#{self.object_id}"])
         else
@@ -1554,6 +1554,8 @@ module ActiveResource
     extend ActiveModel::Naming
     extend ActiveResource::Associations
 
+    extend Enum
+
     include Callbacks, CustomMethods, Observing, Validations
     include ActiveModel::Conversion
     include ActiveModel::Serializers::JSON
@@ -1563,4 +1565,3 @@ module ActiveResource
 
   ActiveSupport.run_load_hooks(:active_resource, Base)
 end
-
