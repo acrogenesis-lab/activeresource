@@ -1,7 +1,7 @@
 module ActiveResource
   # Declare an enum attribute where the values map to integers in the database, but can be queried by name. Example:
   #
-  #   class Conversation < ActiveRecord::Base
+  #   class Conversation < ActiveResource::Base
   #     enum status: %i( active archived )
   #   end
   #
